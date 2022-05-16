@@ -29,6 +29,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures{
+        viewBinding=true
+    }
 }
 
 dependencies {
@@ -41,4 +44,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.github.devsideal:SketchImage:1.0.1'
+    //
+    implementation 'jp.co.cyberagent.android:gpuimage:2.1.0'
+    implementation 'com.github.CanHub:Android-Image-Cropper:2.1.0'
 }
