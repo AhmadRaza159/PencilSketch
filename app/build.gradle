@@ -47,4 +47,5 @@ dependencies {
     //
     implementation 'jp.co.cyberagent.android:gpuimage:2.1.0'
     implementation 'com.github.CanHub:Android-Image-Cropper:2.1.0'
+    implementation 'com.github.yalantis:ucrop:2.2.6'
 }

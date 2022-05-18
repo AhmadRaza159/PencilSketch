@@ -3,8 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android Studio/PencilSketch/app/src/main/res/layout/activity_main.xml" value="0.3546875" />
-        <entry key="..\:/Android Studio/PencilSketch/app/src/main/res/layout/activity_splash_screen.xml" value="0.3546875" />
+        <entry key="..\:/Users/kazal/AndroidStudioProjects/PencilSketch/app/src/main/res/layout/activity_crop.xml" value="0.178125" />
         <entry key="..\:/Users/kazal/AndroidStudioProjects/PencilSketch/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
       </map>
     </option>
