@@ -19,11 +19,12 @@ class CropActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCropBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityCropBinding.inflate(layoutInflater)
+        binding = ActivityCropBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var fUri: Uri =Uri.parse(intent.getStringExtra("dat"))
+        var fUri: Uri = Uri.parse(intent.getStringExtra("dat"))
         imageBitmap = MediaStore.Images.Media.getBitmap(
-            getContentResolver(), fUri)
+            getContentResolver(), fUri
+        )
         binding.imageView2.setScaleType(GPUImage.ScaleType.CENTER_INSIDE)
         Thread {
             binding.imageView2.setImage(imageBitmap)
@@ -31,422 +32,450 @@ class CropActivity : AppCompatActivity() {
         }.start()
 
         binding.eff1.setOnClickListener {
-            var im=GPUImage(this)
-            im.setImage(imageBitmap)
-            var v=GPUImageSketchFilter()
-            im.setFilter(v)
-            im.setBackgroundColor(23f,23f,55f)
-            binding.imageView2.setImage(im.bitmapWithFilterApplied)
+            factory(1,0F)
         }
         binding.eff2.setOnClickListener {
-            var im=GPUImage(this)
-            im.setImage(imageBitmap)
-            var v=GPUImageSubtractBlendFilter()
-            im.setFilter(v)
-            im.setBackgroundColor(23f,23f,55f)
-            binding.imageView2.setImage(im.bitmapWithFilterApplied)
+            factory(2,0F)
         }
         binding.eff3.setOnClickListener {
-            var im=GPUImage(this)
-            im.setImage(imageBitmap)
-            im.setFilter(GPUImageLuminosityBlendFilter())
-            im.setBackgroundColor(23f,23f,55f)
-            binding.imageView2.setImage(im.bitmapWithFilterApplied)
+            factory(3,0F)
         }
-//        binding.eff4.setOnClickListener {
-//            var im=GPUImage(this)
-//            im.setImage(imageBitmap)
-//            var v=GPUImageBrightnessFilter()
-//            v.setBrightness(5.0F)
-//            im.setFilter(v)
-//            im.setBackgroundColor(23f,23f,55f)
-//            binding.imageView2.setImage(im.bitmapWithFilterApplied)
-//        }
+
         binding.eff4.setOnClickListener {
-            var im=GPUImage(this)
-            im.setImage(imageBitmap)
-            im.setFilter(GPUImageSourceOverBlendFilter())
-            im.setBackgroundColor(23f,23f,55f)
-            binding.imageView2.setImage(im.bitmapWithFilterApplied)
+            factory(4,1.0F)
         }
         binding.eff5.setOnClickListener {
-            var im=GPUImage(this)
-            im.setImage(imageBitmap)
-            im.setFilter(GPUImageSolarizeFilter())
-            im.setBackgroundColor(23f,23f,55f)
-            binding.imageView2.setImage(im.bitmapWithFilterApplied)
+            factory(5,90.0F)
         }
         binding.eff6.setOnClickListener {
-            var im=GPUImage(this)
-            im.setImage(imageBitmap)
-            var v=GPUImageSphereRefractionFilter()
-            v.setRadius(5F)
-            im.setFilter(v)
-            im.setBackgroundColor(23f,23f,55f)
-            binding.imageView2.setImage(im.bitmapWithFilterApplied)
+            factory(6,0F)
         }
         binding.eff7.setOnClickListener {
-            var im=GPUImage(this)
-            im.setImage(imageBitmap)
-            im.setFilter(GPUImageSoftLightBlendFilter())
-            im.setBackgroundColor(23f,23f,55f)
-            binding.imageView2.setImage(im.bitmapWithFilterApplied)
+            factory(7,0.5F)
         }
 
         binding.eff8.setOnClickListener {
-            var im=GPUImage(this)
-            im.setImage(imageBitmap)
-            im.setFilter(GPUImageThresholdEdgeDetectionFilter())
-            im.setBackgroundColor(23f,23f,55f)
-            binding.imageView2.setImage(im.bitmapWithFilterApplied)
+            factory(8,10F)
         }
 
         binding.eff9.setOnClickListener {
-            var im=GPUImage(this)
-            im.setImage(imageBitmap)
-            im.setFilter(GPUImageToneCurveFilter())
-            im.setBackgroundColor(23f,23f,55f)
-            binding.imageView2.setImage(im.bitmapWithFilterApplied)
+            factory(9,0F)
         }
 
         binding.eff10.setOnClickListener {
-            var im=GPUImage(this)
-            im.setImage(imageBitmap)
-            im.setFilter(GPUImageWeakPixelInclusionFilter())
-            im.setBackgroundColor(23f,23f,55f)
-            binding.imageView2.setImage(im.bitmapWithFilterApplied)
+            factory(10,0F)
         }
 
+        binding.eff11.setOnClickListener {
+            factory(11,0F)
+        }
+        binding.eff12.setOnClickListener {
+            factory(12,0.25F)
+        }
+        binding.eff13.setOnClickListener {
+            factory(13,0F)
+        }
+        binding.eff14.setOnClickListener {
+            factory(14,0.03F)
+        }
+        binding.eff15.setOnClickListener {
+            factory(15,0F)
+        }
+        binding.eff16.setOnClickListener {
+            factory(16,0F)
+        }
+        binding.eff17.setOnClickListener {
+            factory(17,1F)
+        }
+        binding.eff18.setOnClickListener {
+            factory(18,0.01F)
+        }
+        binding.eff19.setOnClickListener {
+            factory(19,0F)
+        }
+        binding.eff20.setOnClickListener {
+            factory(20,0F)
+        }
+        binding.eff21.setOnClickListener {
+            factory(21,0.2F)
+        }
+        binding.eff22.setOnClickListener {
+            factory(22,0F)
+        }
+        binding.eff23.setOnClickListener {
+            factory(23,1F)
+        }
+        binding.eff24.setOnClickListener {
+            factory(24,0.5F)
+        }
+        binding.eff25.setOnClickListener {
+            factory(25,0F)
+        }
+        binding.eff26.setOnClickListener {
+            factory(26,0F)
+        }
+        binding.eff27.setOnClickListener {
+            factory(27,0F)
+        }
+        binding.eff28.setOnClickListener {
+            factory(28,0F)
+        }
+        binding.eff29.setOnClickListener {
+            factory(29,1.0F)
+        }
+        binding.eff30.setOnClickListener {
+            factory(30,3F)
+        }
+        binding.eff31.setOnClickListener {
+            factory(31,0.5F)
+        }
+        binding.eff32.setOnClickListener {
+            factory(32,0F)
+        }
+        binding.eff33.setOnClickListener {
+            factory(33,0.9F)
+        }
+        binding.eff34.setOnClickListener {
+            factory(34,1F)
+        }
+        binding.eff35.setOnClickListener {
+            factory(35,0F)
+        }
+        binding.eff36.setOnClickListener {
+            factory(36,0F)
+        }
+        binding.eff37.setOnClickListener {
+            factory(37,1F)
+        }
     }
 
-    private fun factory(effect:Int,value:Float){
-        when(effect){
-            1->{
-                var im=GPUImage(this)
+    private fun factory(effect: Int, value: Float) {
+        when (effect) {
+            1 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageSketchFilter()
+                var v = GPUImageSketchFilter()
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            2->{
-                var im=GPUImage(this)
+            2 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageAlphaBlendFilter()
+                var v = GPUImageAlphaBlendFilter()
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            3->{
-                var im=GPUImage(this)
+            3 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageBrightnessFilter()
+                var v = GPUImageBrightnessFilter()
                 v.setBrightness(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            4->{
-                var im=GPUImage(this)
+            4 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageSaturationFilter()
+                var v = GPUImageSaturationFilter()
                 v.setSaturation(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            5->{
-                var im=GPUImage(this)
+            5 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageHueFilter()
+                var v = GPUImageHueFilter()
                 v.setHue(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            6->{
-                var im=GPUImage(this)
+            6 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageHazeFilter()
-                v.setDistance(value)
+                var v = GPUImageHazeFilter()
                 v.setSlope(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            7->{
-                var im=GPUImage(this)
+            7 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageSolarizeFilter()
+                var v = GPUImageSolarizeFilter()
                 v.setThreshold(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            8->{
-                var im=GPUImage(this)
+            8 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImagePosterizeFilter()
+                var v = GPUImagePosterizeFilter()
                 v.setColorLevels(value.toInt())
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            9->{
-                var im=GPUImage(this)
+            9 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageGrayscaleFilter()
+                var v = GPUImageGrayscaleFilter()
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            10->{
-                var im=GPUImage(this)
+            10 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageThresholdEdgeDetectionFilter()
+                var v = GPUImageThresholdEdgeDetectionFilter()
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            11->{
-                var im=GPUImage(this)
+            11 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageSharpenFilter()
+                var v = GPUImageSharpenFilter()
                 v.setSharpness(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            12->{
-                var im=GPUImage(this)
+            12 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageBulgeDistortionFilter()
+                var v = GPUImageBulgeDistortionFilter()
                 v.setRadius(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            13->{
-                var im=GPUImage(this)
+            13 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageCGAColorspaceFilter()
+                var v = GPUImageCGAColorspaceFilter()
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            14->{
-                var im=GPUImage(this)
+            14 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageCrosshatchFilter()
+                var v = GPUImageCrosshatchFilter()
                 v.setCrossHatchSpacing(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            15->{
-                var im=GPUImage(this)
+            15 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageColorInvertFilter()
+                var v = GPUImageColorInvertFilter()
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            16->{
-                var im=GPUImage(this)
+            16 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageDilationFilter()
+                var v = GPUImageDilationFilter()
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            17->{
-                var im=GPUImage(this)
+            17 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageZoomBlurFilter()
+                var v = GPUImageZoomBlurFilter()
                 v.setBlurSize(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            18->{
-                var im=GPUImage(this)
+            18 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageHalftoneFilter()
+                var v = GPUImageHalftoneFilter()
                 v.setAspectRatio(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            19->{
-                var im=GPUImage(this)
+            19 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageDissolveBlendFilter()
+                var v = GPUImageDissolveBlendFilter()
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            20->{
-                var im=GPUImage(this)
+            20 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageSaturationBlendFilter()
+                var v = GPUImageSaturationBlendFilter()
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            21->{
-                var im=GPUImage(this)
+            21 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageToonFilter()
+                var v = GPUImageToonFilter()
                 v.setThreshold(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            22->{
-                var im=GPUImage(this)
+            22 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageSepiaToneFilter()
+                var v = GPUImageSepiaToneFilter()
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            23->{
-                var im=GPUImage(this)
+            23 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageLookupFilter()
+                var v = GPUImageLookupFilter()
                 v.setIntensity(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            24->{
-                var im=GPUImage(this)
+            24 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageSwirlFilter()
+                var v = GPUImageSwirlFilter()
                 v.setRadius(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            25->{
-                var im=GPUImage(this)
+            25 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageLaplacianFilter()
+                var v = GPUImageLaplacianFilter()
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            26->{
-                var im=GPUImage(this)
+            26 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageLuminanceFilter()
+                var v = GPUImageLuminanceFilter()
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            27->{
-                var im=GPUImage(this)
+            27 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageRGBDilationFilter()
+                var v = GPUImageRGBDilationFilter()
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            28->{
-                var im=GPUImage(this)
+            28 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageVibranceFilter()
+                var v = GPUImageVibranceFilter()
                 v.setVibrance(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            29->{
-                var im=GPUImage(this)
+            29 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageEmbossFilter()
-                v.intensity=value
+                var v = GPUImageEmbossFilter()
+                v.intensity = value
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            30->{
-                var im=GPUImage(this)
+            30 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageKuwaharaFilter()
+                var v = GPUImageKuwaharaFilter()
                 v.setRadius(value.toInt())
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
 
-                31->{
-            var im=GPUImage(this)
-            im.setImage(imageBitmap)
-            var v=GPUImageSphereRefractionFilter()
-            v.setRadius(value)
-            im.setFilter(v)
-            im.setBackgroundColor(23f,23f,55f)
-            binding.imageView2.setImage(im.bitmapWithFilterApplied)
-        }
-            32->{
-                var im=GPUImage(this)
+            31 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageWhiteBalanceFilter()
-                v.setTint(value)
-                v.setTemperature(value)
+                var v = GPUImageSphereRefractionFilter()
+                v.setRadius(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            33->{
-                var im=GPUImage(this)
+            32 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageSobelThresholdFilter()
+                var v = GPUImageWhiteBalanceFilter()
+                v.setTint(value)
+                im.setFilter(v)
+                im.setBackgroundColor(23f, 23f, 55f)
+                binding.imageView2.setImage(im.bitmapWithFilterApplied)
+            }
+            33 -> {
+                var im = GPUImage(this)
+                im.setImage(imageBitmap)
+                var v = GPUImageSobelThresholdFilter()
                 v.setThreshold(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            34->{
-                var im=GPUImage(this)
+            34 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageGaussianBlurFilter()
+                var v = GPUImageGaussianBlurFilter()
                 v.setBlurSize(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            35->{
-                var im=GPUImage(this)
+            35 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageVignetteFilter()
+                var v = GPUImageVignetteFilter()
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            36->{
-                var im=GPUImage(this)
+            36 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageSoftLightBlendFilter()
+                var v = GPUImageSoftLightBlendFilter()
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            37->{
-                var im=GPUImage(this)
+            37 -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImagePixelationFilter()
+                var v = GPUImagePixelationFilter()
+                v.setPixel(value)
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
-            else{
-                var im=GPUImage(this)
+            else -> {
+                var im = GPUImage(this)
                 im.setImage(imageBitmap)
-                var v=GPUImageSketchFilter()
+                var v = GPUImageSketchFilter()
                 im.setFilter(v)
-                im.setBackgroundColor(23f,23f,55f)
+                im.setBackgroundColor(23f, 23f, 55f)
                 binding.imageView2.setImage(im.bitmapWithFilterApplied)
             }
 
