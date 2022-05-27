@@ -32,6 +32,9 @@ android {
     buildFeatures{
         viewBinding=true
     }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
 }
 
 dependencies {
@@ -46,6 +49,6 @@ dependencies {
     implementation 'com.github.devsideal:SketchImage:1.0.1'
     //
     implementation 'jp.co.cyberagent.android:gpuimage:2.1.0'
-    implementation 'com.github.CanHub:Android-Image-Cropper:2.1.0'
     implementation 'com.github.yalantis:ucrop:2.2.6'
+    implementation 'com.github.iamutkarshtiwari:Ananas:1.2.6'
 }

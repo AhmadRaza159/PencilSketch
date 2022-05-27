@@ -6,16 +6,42 @@ import android.graphics.Bitmap
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
+import android.widget.Toast
+import androidx.activity.result.ActivityResult
 import com.example.pencilsketch.databinding.ActivityCropBinding
 import com.yalantis.ucrop.UCrop
+import iamutkarshtiwari.github.io.ananas.editimage.EditImageActivity
+import iamutkarshtiwari.github.io.ananas.editimage.ImageEditorIntentBuilder
 import jp.co.cyberagent.android.gpuimage.GPUImage
 import jp.co.cyberagent.android.gpuimage.filter.*
 import java.io.File
+import java.lang.Exception
 import java.util.*
+import androidx.activity.result.contract.ActivityResultContracts
+
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
+
 
 class CropActivity : AppCompatActivity() {
     private var imageBitmap: Bitmap? = null
+    var someActivityResultLauncher = registerForActivityResult(
+        StartActivityForResult()) { result: ActivityResult ->
+        run {
+            val s=result?.data?.getStringExtra(ImageEditorIntentBuilder.OUTPUT_PATH)
+//            imageBitmap = MediaStore.Images.Media.getBitmap(
+//                getContentResolver(), Uri.parse(s)
+//            )
+            binding.imageView2.setScaleType(GPUImage.ScaleType.CENTER_INSIDE)
+            Thread {
+                binding.imageView2.setImage(Uri.parse(s))
+                //fotoyu aldık
+            }.start()
+        }
+    }
     private lateinit var binding: ActivityCropBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +51,36 @@ class CropActivity : AppCompatActivity() {
         imageBitmap = MediaStore.Images.Media.getBitmap(
             getContentResolver(), fUri
         )
+        binding.canvasBtn.setOnClickListener {
+
+            var dest: File = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),"rnd")
+            dest= File(dest,"images.jpeg")
+            try {
+                val intent: Intent = ImageEditorIntentBuilder(this, fUri.path, fUri.path)
+                    .withAddText() // Add the features you need
+                    .withPaintFeature()
+                    .withFilterFeature()
+                    .withRotateFeature()
+                    .withCropFeature()
+                    .withBrightnessFeature()
+                    .withSaturationFeature()
+                    .withBeautyFeature()
+                    .withStickerFeature()
+                    .forcePortrait(true) // Add this to force portrait mode (It's set to false by default)
+                    .setSupportActionBarVisibility(false) // To hide app's default action bar
+                    .build()
+                EditImageActivity.start(someActivityResultLauncher, intent, this)
+            } catch (e: Exception) {
+                e.message?.let {
+                    Log.e(
+                        "Demo App",
+                        it
+                    )
+                } // This could throw if either `sourcePath` or `outputPath` is blank or Null
+            }
+        }
+
+
         binding.imageView2.setScaleType(GPUImage.ScaleType.CENTER_INSIDE)
         Thread {
             binding.imageView2.setImage(imageBitmap)
