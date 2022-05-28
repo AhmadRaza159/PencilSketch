@@ -253,7 +253,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     R.id.more_apps -> {
                         val uri =
-                            Uri.parse("https://play.google.com/store/apps/developer?id=Galaxy+studio+apps")
+                            Uri.parse("https://play.google.com/store/apps/developer?id=Westminster+Pro+Apps")
                         val goToMarket = Intent(Intent.ACTION_VIEW, uri)
                         // To count with Play market backstack, After pressing back button,
                         // to taken back to our application, we need to add following flags to intent.
@@ -270,7 +270,7 @@ class MainActivity : AppCompatActivity() {
                             startActivity(
                                 Intent(
                                     Intent.ACTION_VIEW,
-                                    Uri.parse("https://play.google.com/store/apps/developer?id=Galaxy+studio+apps")
+                                    Uri.parse("https://play.google.com/store/apps/developer?id=Westminster+Pro+Apps")
                                 )
                             )
                         }
@@ -312,9 +312,13 @@ class MainActivity : AppCompatActivity() {
                         true
                     }
                     R.id.policy -> {
-//                        val intent = Intent(this, PrivacyPolicy::class.java)
-//                        startActivity(intent)
+                        val intent = Intent(this, PrivacyPolicy::class.java)
+                        startActivity(intent)
                         binding.drawerLayout.closeDrawers()
+                        true
+                    }
+                    R.id.exit->{
+                        finishAffinity()
                         true
                     }
 

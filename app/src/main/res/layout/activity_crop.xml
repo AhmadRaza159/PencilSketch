@@ -30,6 +30,7 @@
             <ImageView
                 android:id="@+id/bak"
                 android:layout_width="50dp"
+                android:foreground="?selectableItemBackgroundBorderless"
                 android:layout_height="match_parent"
                 android:padding="10dp"
                 android:src="@drawable/ic_baseline_arrow_back_24" />
@@ -47,18 +48,21 @@
 
             <ImageView
                 android:id="@+id/save_btn"
+                android:foreground="?selectableItemBackgroundBorderless"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
-                android:padding="10dp"
-                android:src="@drawable/ic_baseline_save_alt_24" />
+                android:padding="15dp"
+                android:src="@drawable/save_btn" />
+
             <ImageView
                 android:id="@+id/canvas_btn"
                 android:layout_width="60dp"
-                android:layout_toLeftOf="@+id/save_btn"
                 android:layout_height="match_parent"
-                android:padding="10dp"
-                android:src="@drawable/ic_baseline_color_lens_24" />
+                android:layout_toLeftOf="@+id/save_btn"
+                android:padding="15dp"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:src="@drawable/canvas_btn" />
         </RelativeLayout>
 
     </Toolbar>
@@ -83,6 +87,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <SeekBar
+            android:foreground="?selectableItemBackgroundBorderless"
             android:id="@+id/seekbr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -100,263 +105,307 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
                     android:id="@+id/eff1"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
+                    android:src="@drawable/eff_1" />
                 <ImageView
-                    android:id="@+id/eff2"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff3"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff4"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff5"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff6"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff7"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff8"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff9"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
                     android:id="@+id/eff10"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/eff_10"  />
 
                 <ImageView
-                    android:id="@+id/eff11"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff12"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff13"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
                     android:id="@+id/eff14"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
+                    android:src="@drawable/eff_14"  />
                 <ImageView
-                    android:id="@+id/eff15"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff16"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff17"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
                     android:id="@+id/eff18"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/eff_18"  />
 
                 <ImageView
-                    android:id="@+id/eff19"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff20"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
                     android:id="@+id/eff21"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
+                    android:src="@drawable/eff_21"  />
                 <ImageView
-                    android:id="@+id/eff22"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff23"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff24"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
                     android:id="@+id/eff25"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
+                    android:src="@drawable/eff_25"  />
                 <ImageView
-                    android:id="@+id/eff26"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff27"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff28"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
                     android:id="@+id/eff29"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/eff_29"  />
 
                 <ImageView
-                    android:id="@+id/eff30"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff31"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/eff32"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
                     android:id="@+id/eff33"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/eff_33"  />
+
 
                 <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff11"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_11"  />
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_2"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff3"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_3"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff4"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_4"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff5"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_5"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff6"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_6"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff7"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_7"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff8"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_8"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff9"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_9"  />
+
+
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff12"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_12"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff13"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_13"  />
+
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff15"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_15"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff16"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_16"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff17"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_17"  />
+
+
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff19"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_19"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff20"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_20"  />
+
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff22"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_22"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff23"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_23"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff24"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_24"  />
+
+
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff26"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_26"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff27"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_27"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff28"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_28"  />
+
+
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff30"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_30"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff31"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_31"  />
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:id="@+id/eff32"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/eff_32"  />
+
+
+                <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
                     android:id="@+id/eff34"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/eff_34"  />
 
                 <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
                     android:id="@+id/eff35"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/eff_35"  />
 
                 <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
                     android:id="@+id/eff36"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/eff_36"  />
 
                 <ImageView
+                    android:foreground="?selectableItemBackgroundBorderless"
                     android:id="@+id/eff37"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/eff_37"  />
 
 
             </LinearLayout>

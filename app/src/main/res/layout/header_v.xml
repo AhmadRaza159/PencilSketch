@@ -19,5 +19,11 @@
         android:layout_gravity="center_horizontal"
         android:foregroundGravity="center"
         android:src="@drawable/splash_icon" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pencil Sketch Maker"
+        android:textSize="16dp"
+        android:textColor="@color/black"/>
 
 </LinearLayout>
