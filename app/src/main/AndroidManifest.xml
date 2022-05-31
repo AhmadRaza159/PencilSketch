@@ -18,9 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PencilSketch">
         <activity
+            android:name=".MyCreationActivity"
+            android:exported="false" />
+        <activity
             android:name=".PrivacyPolicy"
             android:exported="false" />
-
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"

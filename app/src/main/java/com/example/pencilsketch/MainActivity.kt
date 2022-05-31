@@ -31,6 +31,10 @@ class MainActivity : AppCompatActivity() {
 
         animateNavigationDrawer()
         menuPoping()
+        binding.creationBtn.setOnClickListener {
+            startActivity(Intent(this,MyCreationActivity::class.java))
+        }
+
         binding.galleryBtn.setOnClickListener {
             val intent = Intent()
             intent.type = "image/*"
