@@ -50,7 +50,7 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintVertical_bias="1"
+            app:layout_constraintVertical_bias="0.94"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -62,8 +62,8 @@
 
     <ImageView
         android:id="@+id/cam_btn"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_width="180dp"
+        android:layout_height="90dp"
         android:src="@drawable/camera_button"
         android:background="@drawable/btn_bg"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,8 +73,8 @@
 
     <ImageView
         android:id="@+id/gallery_btn"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_width="180dp"
+        android:layout_height="90dp"
         android:background="@drawable/btn_bg"
         android:src="@drawable/gallery_button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,10 +84,10 @@
 
         <ImageView
             android:id="@+id/creation_btn"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
+            android:layout_width="180dp"
+            android:layout_height="90dp"
             android:background="@drawable/btn_bg"
-            android:src="@drawable/gallery_button"
+            android:src="@drawable/ic_btnnn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/gallery_btn"

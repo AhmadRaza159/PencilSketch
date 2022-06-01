@@ -1,15 +1,20 @@
 package com.example.pencilsketch
 
+import android.Manifest
 import android.content.ActivityNotFoundException
 import android.content.ContentValues
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.StrictMode
 import android.os.StrictMode.VmPolicy
 import android.provider.MediaStore
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.pencilsketch.databinding.ActivityMainBinding
@@ -22,6 +27,30 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private  var imageUri: Uri?=null
+    private var storagePermission = arrayOf(
+        Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE
+    )
+    @RequiresApi(Build.VERSION_CODES.M)
+    fun requestStoragePermission() {
+        requestPermissions( storagePermission, 11)
+    }
+
+    @RequiresApi(Build.VERSION_CODES.M)
+    fun checkStoragePermission(): Boolean {
+        var a= ContextCompat.checkSelfPermission(
+            this,
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        ) == PackageManager.PERMISSION_GRANTED
+
+        var b=ContextCompat.checkSelfPermission(
+            this,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+        ) == PackageManager.PERMISSION_GRANTED
+
+        return a&&b
+    }
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
@@ -31,30 +60,51 @@ class MainActivity : AppCompatActivity() {
 
         animateNavigationDrawer()
         menuPoping()
+        if (!checkStoragePermission()){
+            requestStoragePermission()
+        }
         binding.creationBtn.setOnClickListener {
-            startActivity(Intent(this,MyCreationActivity::class.java))
+            if (checkStoragePermission()){
+                startActivity(Intent(this,MyCreationActivity::class.java))
+            }
+            else{
+                requestStoragePermission()
+            }
         }
 
         binding.galleryBtn.setOnClickListener {
-            val intent = Intent()
-            intent.type = "image/*"
-            intent.action = Intent.ACTION_GET_CONTENT
-            startActivityForResult(
-                Intent.createChooser(intent, "Select Picture"),
-                1313
-            )
+            if (checkStoragePermission()){
+                val intent = Intent()
+                intent.type = "image/*"
+                intent.action = Intent.ACTION_GET_CONTENT
+                startActivityForResult(
+                    Intent.createChooser(intent, "Select Picture"),
+                    1313
+                )
+            }
+            else{
+                requestStoragePermission()
+            }
+
         }
         binding.camBtn.setOnClickListener {
 //            binding.img.setImage(binding.img.capture())
-            var values = ContentValues()
-            values.put(MediaStore.Images.Media.TITLE, "New Picture")
-            values.put(MediaStore.Images.Media.DESCRIPTION, "From your Camera")
-           imageUri= contentResolver.insert(
-                MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values
-            )
-            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
-            startActivityForResult(intent, 1212)
+            if (checkStoragePermission()){
+                var values = ContentValues()
+                values.put(MediaStore.Images.Media.TITLE, "New Picture")
+                values.put(MediaStore.Images.Media.DESCRIPTION, "From your Camera")
+                imageUri= contentResolver.insert(
+                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values
+                )
+                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
+                startActivityForResult(intent, 1212)
+            }
+            else{
+                requestStoragePermission()
+            }
+
+
 
 //            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
 //            imageFile = File(

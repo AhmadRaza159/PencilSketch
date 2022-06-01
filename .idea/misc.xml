@@ -3,12 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/kazal/AndroidStudioProjects/PencilSketch/app/src/main/res/drawable-v24/btn_yellow_bg_normal.xml" value="0.2203125" />
+        <entry key="..\:/Users/kazal/AndroidStudioProjects/PencilSketch/app/src/main/res/drawable/btm_bg.xml" value="0.2203125" />
+        <entry key="..\:/Users/kazal/AndroidStudioProjects/PencilSketch/app/src/main/res/drawable/btn_bg.xml" value="0.2203125" />
+        <entry key="..\:/Users/kazal/AndroidStudioProjects/PencilSketch/app/src/main/res/drawable/btn_yellow_bg.xml" value="0.2203125" />
         <entry key="..\:/Users/kazal/AndroidStudioProjects/PencilSketch/app/src/main/res/layout/activity_crop.xml" value="0.22" />
         <entry key="..\:/Users/kazal/AndroidStudioProjects/PencilSketch/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/kazal/AndroidStudioProjects/PencilSketch/app/src/main/res/layout/activity_my_creation.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/kazal/AndroidStudioProjects/PencilSketch/app/src/main/res/layout/activity_splash_screen.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/kazal/AndroidStudioProjects/PencilSketch/app/src/main/res/layout/bottom_sheet.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/kazal/AndroidStudioProjects/PencilSketch/app/src/main/res/layout/header_v.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/kazal/AndroidStudioProjects/PencilSketch/app/src/main/res/layout/item_image.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/kazal/AndroidStudioProjects/PencilSketch/app/src/main/res/menu/side_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/kazal/AndroidStudioProjects/PencilSketch/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
       </map>
     </option>
   </component>

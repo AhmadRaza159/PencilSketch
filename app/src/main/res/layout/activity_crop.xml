@@ -89,6 +89,8 @@
         <SeekBar
             android:foreground="?selectableItemBackgroundBorderless"
             android:id="@+id/seekbr"
+            app:trackHeight="22dp"
+            app:thumbRadius="26dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp" />

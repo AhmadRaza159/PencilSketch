@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import java.io.File
 
 class AdapterFile (var context: Context, var widgetList: Array<File>, private val itemsListInterface: MyInterface, private val itemsListInterfaceDelete: MyInterface) : RecyclerView.Adapter<AdapterFile.myVieholder>() {
@@ -21,13 +22,15 @@ class AdapterFile (var context: Context, var widgetList: Array<File>, private va
     }
 
     override fun onBindViewHolder(holder: myVieholder, position: Int) {
-        holder.itemView.findViewById<TextView>(R.id.text_name).text=widgetList[position].name
-        holder.itemView.findViewById<ImageView>(R.id.btn_delete).setOnClickListener {
-            itemsListInterfaceDelete.onclick(widgetList[position])
-        }
+        Glide.with(context)
+            .load(widgetList[position].absolutePath) // or URI/path
+            .into(holder.itemView.findViewById<ImageView>(R.id.img_img))
         holder.itemView.setOnClickListener{
             itemsListInterface.onclick(widgetList[position])
-
+        }
+        holder.itemView.setOnLongClickListener {
+            itemsListInterfaceDelete.onclick(widgetList[position])
+            return@setOnLongClickListener true
         }
     }
 
