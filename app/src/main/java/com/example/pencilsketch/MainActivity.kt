@@ -1,9 +1,7 @@
 package com.example.pencilsketch
 
 import android.Manifest
-import android.content.ActivityNotFoundException
-import android.content.ContentValues
-import android.content.Intent
+import android.content.*
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
@@ -11,7 +9,9 @@ import android.os.Bundle
 import android.os.StrictMode
 import android.os.StrictMode.VmPolicy
 import android.provider.MediaStore
+import android.provider.Settings
 import android.view.View
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -33,7 +33,33 @@ class MainActivity : AppCompatActivity() {
     )
     @RequiresApi(Build.VERSION_CODES.M)
     fun requestStoragePermission() {
-        requestPermissions( storagePermission, 11)
+        val spat = this.getSharedPreferences(
+            "spat", Context.MODE_PRIVATE
+        )
+        if (spat.all.isNotEmpty()){
+            if (shouldShowRequestPermissionRationale(Manifest.permission.READ_EXTERNAL_STORAGE) || shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)){
+                requestPermissions( storagePermission, 11)
+            }
+            else{
+                Toast.makeText(this,"Please allow storage permission!",Toast.LENGTH_SHORT).show()
+                val intent = Intent()
+                intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+                val uri = Uri.fromParts(
+                    "package", this@MainActivity.packageName,
+                    null
+                )
+                intent.data = uri
+                this@MainActivity.startActivity(intent)
+            }
+        }
+        else{
+            requestPermissions( storagePermission, 11)
+            val editor: SharedPreferences.Editor = spat.edit()
+            editor.putInt("permission",1)
+            editor.apply()
+            editor.commit()
+        }
+
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
