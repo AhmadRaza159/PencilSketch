@@ -11,13 +11,16 @@ import android.os.StrictMode.VmPolicy
 import android.provider.MediaStore
 import android.provider.Settings
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.pencilsketch.databinding.ActivityMainBinding
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.yalantis.ucrop.UCrop
 import jp.co.cyberagent.android.gpuimage.filter.*
 import java.io.File
@@ -41,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                 requestPermissions( storagePermission, 11)
             }
             else{
-                Toast.makeText(this,"Please allow storage permission!",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Please allow zqq2storage permission!",Toast.LENGTH_SHORT).show()
                 val intent = Intent()
                 intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
                 val uri = Uri.fromParts(
@@ -76,6 +79,27 @@ class MainActivity : AppCompatActivity() {
 
         return a&&b
     }
+
+    override fun onBackPressed() {
+        val alertDialog = AlertDialog.Builder(this)
+        val customLayout: View = getLayoutInflater().inflate(R.layout.dialog_box, null)
+        alertDialog.setView(customLayout)
+        val alert = alertDialog.create()
+        alert.setCancelable(false)
+        alert.setCanceledOnTouchOutside(true)
+        val yesBtn: TextView = customLayout.findViewById(R.id.btn_yes)
+        val noBtn: TextView = customLayout.findViewById(R.id.btn_no)
+
+        noBtn.setOnClickListener {
+            alert.dismiss()
+        }
+        yesBtn.setOnClickListener {
+            finishAffinity()
+        }
+
+        alert.show()
+    }
+
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,9 +110,13 @@ class MainActivity : AppCompatActivity() {
 
         animateNavigationDrawer()
         menuPoping()
+
         if (!checkStoragePermission()){
             requestStoragePermission()
         }
+
+
+
         binding.creationBtn.setOnClickListener {
             if (checkStoragePermission()){
                 startActivity(Intent(this,MyCreationActivity::class.java))
@@ -398,7 +426,24 @@ class MainActivity : AppCompatActivity() {
                         true
                     }
                     R.id.exit->{
-                        finishAffinity()
+                        binding.drawerLayout.closeDrawers()
+                        val alertDialog = AlertDialog.Builder(this)
+                        val customLayout: View = getLayoutInflater().inflate(R.layout.dialog_box, null)
+                        alertDialog.setView(customLayout)
+                        val alert = alertDialog.create()
+                        alert.setCancelable(false)
+                        alert.setCanceledOnTouchOutside(true)
+                        val yesBtn: TextView = customLayout.findViewById(R.id.btn_yes)
+                        val noBtn: TextView = customLayout.findViewById(R.id.btn_no)
+
+                        noBtn.setOnClickListener {
+                            alert.dismiss()
+                        }
+                        yesBtn.setOnClickListener {
+                            finishAffinity()
+                        }
+
+                        alert.show()
                         true
                     }
 
