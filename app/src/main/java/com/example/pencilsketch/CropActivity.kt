@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
+import android.view.Gravity
 import android.view.View
 import android.widget.SeekBar
 import android.widget.Toast
@@ -30,6 +31,10 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.core.content.FileProvider
 import java.io.FileOutputStream
+import android.view.ViewGroup
+
+
+
 
 
 class CropActivity : AppCompatActivity() {
@@ -111,6 +116,10 @@ class CropActivity : AppCompatActivity() {
 
 
         binding.canvasBtn.setOnClickListener {
+            val t=Toast.makeText(this,"To add text, click at the center of black screen to start typing typing",Toast.LENGTH_LONG)
+                t.setGravity(Gravity.CENTER,0,0)
+            t.setMargin(5f,5f)
+                    t.show()
 //            var dest: File = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),"rnd")
 //            dest= File(dest,"imagess.jpeg")
             try {

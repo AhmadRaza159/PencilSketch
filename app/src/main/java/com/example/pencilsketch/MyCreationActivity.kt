@@ -83,6 +83,14 @@ class MyCreationActivity : AppCompatActivity() {
 
             }
 
+        },object :MyInterface{
+            override fun onclick(model: File) {
+                BottomSheetBehavior.from(binding.bottomSheet.bottomSheetFrame).state = BottomSheetBehavior.STATE_COLLAPSED
+                selectedFile=model
+                BottomSheetBehavior.from(binding.bottomSheet.bottomSheetFrame).state = BottomSheetBehavior.STATE_EXPANDED
+
+            }
+
         })
         binding.myCreationRecyclerview.adapter=adapter
 

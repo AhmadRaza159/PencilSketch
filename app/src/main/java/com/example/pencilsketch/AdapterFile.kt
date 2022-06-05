@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import java.io.File
 
-class AdapterFile (var context: Context, var widgetList: Array<File>, private val itemsListInterface: MyInterface, private val itemsListInterfaceDelete: MyInterface) : RecyclerView.Adapter<AdapterFile.myVieholder>() {
+class AdapterFile (var context: Context, var widgetList: Array<File>, private val itemsListInterface: MyInterface, private val itemsListInterfaceDelete: MyInterface, private val itemsListInterfaceOpt: MyInterface) : RecyclerView.Adapter<AdapterFile.myVieholder>() {
    class myVieholder(itemView:View): RecyclerView.ViewHolder(itemView) {
 
    }
@@ -31,6 +31,9 @@ class AdapterFile (var context: Context, var widgetList: Array<File>, private va
         holder.itemView.setOnLongClickListener {
             itemsListInterfaceDelete.onclick(widgetList[position])
             return@setOnLongClickListener true
+        }
+        holder.itemView.findViewById<ImageView>(R.id.btn_opt).setOnClickListener{
+            itemsListInterfaceOpt.onclick(widgetList[position])
         }
     }
 
